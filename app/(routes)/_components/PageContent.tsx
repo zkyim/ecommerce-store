@@ -1,13 +1,10 @@
-"use server"
 import Container from "@/components/ui/container";
 import Billboard from "@/components/billboard";
 import getBillboards from "@/actions/get-billboard";
 import getProducts from "@/actions/get-products";
 import ProductList from "@/components/product-list";
 
-// export const revalidate = 10;
-
-const HomePage = async () => {
+const PageContent = async () => {
     const products = await getProducts({ isFeaturedId: true });
     const billboard = await getBillboards('9c5cdfc6-d32c-473e-9bc5-1fb86e7ec1b1');
     
@@ -23,6 +20,6 @@ const HomePage = async () => {
             </Container>
         </div>
     );
-} 
+}
 
-export default HomePage;
+export default PageContent

@@ -33,7 +33,7 @@ const Fillter: React.FC<FillterProps> = ({
             query[valueKey] = null;
         }
 
-        const url = qs.stringify({
+        const url = qs.stringifyUrl({
             url: window.location.href,
             query
         }, { skipNull: true });

@@ -7,6 +7,7 @@ import Container from "@/components/ui/container";
 import Fillter from "./components/fillter";
 import NoResluts from "@/components/ui/no-results";
 import ProductCard from "@/components/ui/product-card";
+import MobileFillter from "./components/mobile-fillter";
 
 export const revalidate = 0;
 
@@ -42,8 +43,9 @@ const CategoryPage: React.FC<CategoryPageProps> = async ({
                 />
                 <div className="px-4 sm:px-6 lg:px-8 pb-24">
                     <div className="lg:grid lg:grid-cols-5 lg:gap-x-8">
+                        <MobileFillter sizes={sizes} colors={colors}/>
                         <div className="hidden lg:block">
-                            {/* <Fillter 
+                            <Fillter 
                                 valueKey="sizeId"
                                 name="Sizes"
                                 data={sizes}
@@ -52,7 +54,7 @@ const CategoryPage: React.FC<CategoryPageProps> = async ({
                                 valueKey="colorId"
                                 name="Colors"
                                 data={colors}
-                            /> */}
+                            />
                         </div>
                         <div className="mt-6 lg:col-span-4 lg:mt-0">
                             {products.length === 0 && <NoResluts />}
